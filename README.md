@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Airnow FE Tech Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Submission Guideline
 
-## Available Scripts
+Please fork this repository. when you have finished your work please provide a link to your own repository. You are also welcome to host this on Github if you don't have a Bitbucket account.
 
-In the project directory, you can run:
+## Task
 
-### `npm start`
+We would like you to demonstrate, using a technology of your choice, how to fetch and manipulate data in a json format and then present that to a user.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Given the two datasets in this repository, create a Javascript project that creates a component similar to the wire frame provided.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This task should take you somewhere from a few hours to a day. Please don’t take any more time than this, we are more interested in your approach than completing the task.
 
-### `npm test`
+Please look at the mockup provided and decide how best to approach this problem.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Acceptance Criteria
 
-### `npm run build`
+Some basic acceptance criteria is as below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Given I load the component I am presented with a list of installed SDK’s.
+Given the component is loaded, and ‘Installed’ is selected, when I click the “uninstalled” button, the application will render the list of uninstalled SDK’s.
+Given the component is loaded, and ‘Uninstalled’ is selected, when I click the “installed” button, the application will render the list of installed SDK’s.
+Given the list is rendered I would like to see the SDK’s grouped into their categories.
+Given the component is loaded I would like to see the last seen date for each SDK in a human readable format.
+Given the component is loaded I would like to see the latest updated date in the format provided in the wire frame.
+Given the component is loaded I would like to see the total count of SDK’s.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Outcomes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Some things we would like to see:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Frequent commits.
+Some testing implementation.
+A choice of application state (context, redux etc)
+Some UI decisions being made, a UI wire frame has been provided but feel free to add your own framework or styles.
+It’s up to you what technology you want to use to achieve this. Our current stack is using React and GraphQL but we are more interested in your approach to solving the task given to you.
