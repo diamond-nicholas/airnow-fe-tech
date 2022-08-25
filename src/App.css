@@ -1,3 +1,39 @@
-p {
+.userPage {
+  padding: 3rem;
+}
+
+h3 {
   text-align: center;
+}
+
+.btn-selector {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.btn-selector .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1a84d8;
+  border: 2px solid #1a84d8;
+  width: 9rem;
+  height: 2rem;
+  border-radius: 20px;
+}
+
+.btn-selector button {
+  background: #fff;
+  color: #1a84d8;
+  border: 1px solid #1a84d8;
+  border-radius: 10px;
+  border: none;
+  height: 2rem;
+  margin: 0;
+}
+
+.btn-selector .wrapper .line {
+  border-left: 1px solid #1a84d8;
+  height: 2rem;
 }
