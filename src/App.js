@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { data, undata } from './actions';
 import installedData from './Datasets/installed.json';
 import uninstalledData from './Datasets/uninstalled.json';
@@ -17,11 +17,9 @@ function App() {
   const handleInstall = () => {
     dispatch(data(installedData.data.installedSdks));
     setIsClicked(false);
-    console.log('dang');
   };
 
   const handleUninstall = () => {
-    console.log('ok');
     dispatch(undata(uninstalledData.data.uninstalledSdks));
     setIsClicked(true);
   };

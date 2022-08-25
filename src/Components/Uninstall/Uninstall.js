@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { undata } from '../../actions';
 import uninstalledData from '../../Datasets/uninstalled.json';
 import './unistall.css';
+import { formatDate } from '../../Utils/formateDate';
 
 function Uninstall() {
   const dispatch = useDispatch();
@@ -10,6 +11,9 @@ function Uninstall() {
   useEffect(() => {
     dispatch(undata(uninstalledData.data.uninstalledSdks));
   }, []);
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <section className='userData'>
       <div className='wrapperData'>
@@ -25,14 +29,16 @@ function Uninstall() {
         <div className='borderline'></div>
 
         <article className='sdk-categories'>
-          {unselect.map((data) => {
+          {unselect.map(({ id, categories, name, latestUpdatedDate }) => {
             return (
-              <div key={data.id} className='sdk-category-wrapper'>
+              <div key={id} className='sdk-category-wrapper'>
                 <div className='sdk-1'>
-                  <h3 className='category'>{data.categories[0]}</h3>
+                  <h3 className='category'>{categories[0]}</h3>
                   <div className='sdk-body'>
-                    <p className='name'>{data.name}</p>
-                    <p className='lastseen'>{data.lastSeenDate}</p>
+                    <p className='name'>{name}</p>
+                    <p className='lastseen'>
+                      {currentYear - currentYear} years ago
+                    </p>
                   </div>
                 </div>
               </div>

@@ -7,9 +7,12 @@ import './Install.css';
 function Install() {
   const dispatch = useDispatch();
   const select = useSelector((state) => state.install.Data);
+  const SDKs = select.installedSdks;
   useEffect(() => {
     dispatch(data(installedData.data.installedSdks));
   }, []);
+
+  const currentYear = new Date().getFullYear();
   return (
     <section className='userData'>
       <div className='wrapperData'>
@@ -25,14 +28,16 @@ function Install() {
         <div className='borderline'></div>
 
         <article className='sdk-categories'>
-          {select.map((data) => {
+          {select.map(({ id, categories, name, lastSeenDate }) => {
             return (
-              <div key={data.id} className='sdk-category-wrapper'>
+              <div key={id} className='sdk-category-wrapper'>
                 <div className='sdk-1'>
-                  <h3 className='category'>{data.categories[0]}</h3>
+                  <h3 className='category'>{categories[0]}</h3>
                   <div className='sdk-body'>
-                    <p className='name'>{data.name}</p>
-                    <p className='lastseen'>{data.lastSeenDate}</p>
+                    <p className='name'>{name}</p>
+                    <p className='lastseen'>
+                      {currentYear - currentYear} years ago
+                    </p>
                   </div>
                 </div>
               </div>
