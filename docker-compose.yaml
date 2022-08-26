@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  airnow-fe-tech-test:
+    build: .
+    container_name: airnow-fe-tech-test_container
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
