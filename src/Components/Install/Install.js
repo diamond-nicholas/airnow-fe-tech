@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { data } from '../../actions';
 import installedData from '../../Datasets/installed.json';
 import './Install.css';
+import { formatDate } from '../../utils/formatDate';
 
 function Install() {
   const dispatch = useDispatch();
@@ -11,37 +12,40 @@ function Install() {
     dispatch(data(installedData.data.installedSdks));
   }, []);
 
-  const currentYear = new Date().getFullYear();
   return (
     <section className='userData'>
       <div className='wrapperData'>
         <div className='header'>
           <div className='header-left'>
             <h2 className='sdk-type'>installedSdks</h2>
-            <p>Latest Update: Jul 16, 2019</p>
+            <p>Latest Update: Jun 16, 2019</p>
           </div>
           <div className='header-right'>
-            <h4 className='sdk-count'>{select.length}</h4>
+            <h4 className='sdk-count'>{}</h4>
           </div>
         </div>
         <div className='borderline'></div>
 
         <article className='sdk-categories'>
-          {select.map(({ id, categories, name, lastSeenDate }) => {
-            return (
-              <div key={id} className='sdk-category-wrapper'>
-                <div className='sdk-1'>
-                  <h3 className='category'>{categories[0]}</h3>
-                  <div className='sdk-body'>
-                    <p className='name'>{name}</p>
-                    <p className='lastseen'>
-                      {currentYear - currentYear} years ago
-                    </p>
+          {select.map(
+            ({ id, categories, name, firstSeenDate, lastSeenDate }) => {
+              return (
+                <div key={id} className='sdk-category-wrapper'>
+                  <div className='sdk-1'>
+                    <h3 className='category'>{categories[0]}</h3>
+                    <div className='sdk-body'>
+                      <p className='name'>{name}</p>
+                      <p className='lastseen'>
+                        {new Date(lastSeenDate).getFullYear() -
+                          new Date(firstSeenDate).getFullYear()}{' '}
+                        years ago
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            }
+          )}
         </article>
       </div>
     </section>
