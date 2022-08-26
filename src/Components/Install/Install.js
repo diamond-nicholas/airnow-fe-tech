@@ -7,7 +7,6 @@ import './Install.css';
 function Install() {
   const dispatch = useDispatch();
   const select = useSelector((state) => state.install.Data);
-  const SDKs = select.installedSdks;
   useEffect(() => {
     dispatch(data(installedData.data.installedSdks));
   }, []);
